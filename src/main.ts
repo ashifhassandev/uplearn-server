@@ -8,10 +8,11 @@ const bootstrap = async () => {
 
 	const app = createExpressApp();
 
+	const BASE_URL = process.env.BASE_URL
 	const PORT = process.env.PORT || 3000;
 
 	app.listen(PORT, () => {
-		console.log(`Server running on http://localhost:${PORT}`);
+		console.log(`Server running on ${BASE_URL}:${PORT}`);
 	});
 };
 
