@@ -15,7 +15,7 @@ export class StudentDetailsRepositoryImpl implements IStudentDetailsRepository {
   async findByUserId(userId: string): Promise<StudentDetails | null> {
     const doc = await StudentDetailsModel.findOne({ userId });
     if (!doc) return null;
-    
+
     return StudentDetailsMapper.toDomain(doc);
   }
 
